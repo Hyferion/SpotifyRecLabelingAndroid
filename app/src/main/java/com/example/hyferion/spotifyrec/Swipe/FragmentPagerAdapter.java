@@ -17,14 +17,14 @@ public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new SwipeFragment();
 
-            //case 1:
-              //  return new OverviewFragment();
+            case 1:
+                return new OverviewFragment();
         }
         return null;
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return 2;
     }
 }

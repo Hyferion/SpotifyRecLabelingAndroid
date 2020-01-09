@@ -99,7 +99,7 @@ public class SplashActivity extends AppCompatActivity {
                     // Handle other cases
             }
         }
-
-
     }
+
+
 }

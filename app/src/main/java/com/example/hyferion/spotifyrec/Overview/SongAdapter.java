@@ -69,24 +69,24 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder> 
         public void onClick(View view) {
             if (song.getLiked()) {
                 databaseReference.child(song.getId()).child("liked").setValue(false);
-                spotifyConnector.addSongToDislikedPlaylist(song);
-                spotifyConnector.removeSongFromLibrary(song);
+                //spotifyConnector.addSongToDislikedPlaylist(song);
+                //spotifyConnector.removeSongFromLibrary(song);
                 databaseReference.child(song.getId()).child("playlist").child("id").setValue(sharedPreferences.getString("playlist", null));
                 databaseReference.child(song.getId()).child("playlist").child("name").setValue(sharedPreferences.getString("playlistname", null));
                 song.setLiked(false);
-                song.setPlaylist(new Playlist(sharedPreferences.getString("playlist", ""), sharedPreferences.getString("playlistname", "")));
+                //song.setPlaylist(new Playlist(sharedPreferences.getString("playlist", ""), sharedPreferences.getString("playlistname", "")));
                 view.setBackgroundColor(context.getResources().getColor(R.color.red));
-                TextView playlist = view.findViewById(R.id.playlist);
-                playlist.setText(sharedPreferences.getString("playlistname", ""));
+                //TextView playlist = view.findViewById(R.id.playlist);
+                //playlist.setText(sharedPreferences.getString("playlistname", ""));
             } else {
                 databaseReference.child(song.getId()).child("liked").setValue(true);
                 //databaseReference.child(song.getId()).child("playlist").removeValue();
-                spotifyConnector.saveSongToLibrary(song);
-                spotifyConnector.removeSongFromDislikedPlaylist(song);
+                //spotifyConnector.saveSongToLibrary(song);
+                //spotifyConnector.removeSongFromDislikedPlaylist(song);
                 song.setLiked(true);
                 view.setBackgroundColor(context.getResources().getColor(R.color.green));
-                TextView playlist = view.findViewById(R.id.playlist);
-                playlist.setText("");
+                //TextView playlist = view.findViewById(R.id.playlist);
+                //playlist.setText("");
 
             }
         }
@@ -96,7 +96,7 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder> 
         mDataset = myDataset;
         mContext = context;
     }
-
+.
     @Override
     public SongAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
                                                        int viewType) {
